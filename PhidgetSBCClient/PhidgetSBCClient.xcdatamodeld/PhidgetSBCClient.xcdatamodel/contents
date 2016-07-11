@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="ACCELEROMETER_CHANGE" syncable="YES">
+        <attribute name="acceleration" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="INTERFACEKIT_INPUTCHANGE" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="INTERFACEKIT_OUTPUTCHANGE" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="INTERFACEKIT_SENSORCHANGE" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="PHIDGET_ATTACHED" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="PHIDGET_DETACHED" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="PHIDGET_ERROR" syncable="YES">
+        <attribute name="errorcode" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="errordescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="SPATIAL_DATACHANGE" syncable="YES">
+        <attribute name="acceleration_x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="acceleration_y" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="acceleration_z" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="angularrate_x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="angularrate_y" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="angularrate_z" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="magneticfield_x" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="magneticfield_y" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="magneticfield_z" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="TEMPERATURE_CHANGE" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="logtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="potential" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PHIDGET_ATTACHED" positionX="-117" positionY="-259" width="128" height="88"/>
+        <element name="PHIDGET_DETACHED" positionX="36" positionY="-261" width="128" height="88"/>
+        <element name="PHIDGET_ERROR" positionX="180" positionY="-252" width="128" height="118"/>
+        <element name="INTERFACEKIT_INPUTCHANGE" positionX="-207" positionY="-61" width="189" height="118"/>
+        <element name="INTERFACEKIT_OUTPUTCHANGE" positionX="-9" positionY="-61" width="207" height="118"/>
+        <element name="INTERFACEKIT_SENSORCHANGE" positionX="216" positionY="-61" width="198" height="118"/>
+        <element name="SPATIAL_DATACHANGE" positionX="-18" positionY="81" width="180" height="238"/>
+        <element name="TEMPERATURE_CHANGE" positionX="-20" positionY="333" width="164" height="133"/>
+        <element name="ACCELEROMETER_CHANGE" positionX="-27" positionY="497" width="189" height="118"/>
+    </elements>
+</model>

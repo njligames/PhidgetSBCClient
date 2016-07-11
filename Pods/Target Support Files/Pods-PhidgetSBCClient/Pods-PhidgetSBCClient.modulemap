@@ -1,0 +1,6 @@
+framework module Pods_PhidgetSBCClient {
+  umbrella header "Pods-PhidgetSBCClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
