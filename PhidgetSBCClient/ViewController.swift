@@ -90,12 +90,12 @@ class ViewController: UIViewController
         
         let url = String("http://10.0.1.17:8001/query")
         
-//        self.loadLogs(url, array: &self.spatialDataChangeLogs)
+        self.loadLogs(url, array: &self.spatialDataChangeLogs)
         self.loadLogs(url, array: &self.accelerometerChangeLogs)
-//        self.loadLogs(url, array: &self.interfaceKitInputChangeLogs)
-//        self.loadLogs(url, array: &self.interfaceKitOutputChangeLogs)
-//        self.loadLogs(url, array: &self.interfaceKitSensorChangeLogs)
-//        self.loadLogs(url, array: &self.temperatureChangeLogs)
+        self.loadLogs(url, array: &self.interfaceKitInputChangeLogs)
+        self.loadLogs(url, array: &self.interfaceKitOutputChangeLogs)
+        self.loadLogs(url, array: &self.interfaceKitSensorChangeLogs)
+        self.loadLogs(url, array: &self.temperatureChangeLogs)
         
     }
     

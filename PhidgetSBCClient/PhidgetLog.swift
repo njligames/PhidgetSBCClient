@@ -128,29 +128,11 @@ class PhidgetLog
     
     class func queryUntilNow(url: String, from: [String:String], onCompletion: ([[String: AnyObject]]) -> Void)
     {
-        let baseBody : [String: AnyObject] = ["table":sqlTableName(),
-                                              "year_from":from["year"]!,
-                                              "month_from":from["month"]!,
-                                              "day_from":from["day"]!,
-                                              "hour_from":from["hour"]!,
-                                              "minute_from":from["minute"]!,
-                                              "second_from":from["second"]!]
-        
-        RestApiManager.sharedInstance.baseURL = url
-        RestApiManager.sharedInstance.post(baseBody, onCompletion: { (json:AnyObject) in
-            if let v = json[sqlTableName()] as? String
-            {
-                if let logs = v.parseJSONString as? [[String: AnyObject]]
-                {
-                    onCompletion(logs)
-                }
-            }
-        })
+        queryRange(url, from: from, to: Date.now(), onCompletion: onCompletion)
     }
     
     class func query(url: String, onCompletion: ([[String: AnyObject]]) -> Void)
     {
-        let from = Date.from(2000, month: 1, day: 1, hour: 0, minute: 0, second: 0)
-        queryUntilNow(url, from: from, onCompletion: onCompletion)
+        queryRange(url, from: Date.distantPast(), to: Date.distantFuture(), onCompletion: onCompletion)
     }
 }
