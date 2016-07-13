@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D38D7A1F5A7E491960C4A8EA1D970C4F1A964D4D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9160F58490E387BF6C59D3BE73EA8BEFA3F6D416" : 0,
+    "D38D7A1F5A7E491960C4A8EA1D970C4F1A964D4D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6B1678D4-7DD2-413D-88FD-C0749F39917C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9160F58490E387BF6C59D3BE73EA8BEFA3F6D416" : "",
+    "D38D7A1F5A7E491960C4A8EA1D970C4F1A964D4D" : "PhidgetSBCClient\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PhidgetSBCClient",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PhidgetSBCClient.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:njligames\/Candidly.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9160F58490E387BF6C59D3BE73EA8BEFA3F6D416"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/njligames\/PhidgetSBCClient.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D38D7A1F5A7E491960C4A8EA1D970C4F1A964D4D"
+    }
+  ]
+}

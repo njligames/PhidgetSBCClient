@@ -1,15 +1,15 @@
 //
-//  SpatialChange.swift
+//  InterfaceKitOutputChange.swift
 //  PhidgetSBCClient
 //
-//  Created by James Folk on 7/8/16.
+//  Created by James Folk on 7/12/16.
 //  Copyright © 2016 NJLIGames Ltd. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-class SpatialChange : PhidgetLog, CustomDebugStringConvertible
+class InterfaceKitOutputChange : PhidgetLog, CustomDebugStringConvertible
 {
     var debugDescription: String {
         get
@@ -19,12 +19,12 @@ class SpatialChange : PhidgetLog, CustomDebugStringConvertible
     }
     
     override class func sqlTableName() -> String {
-        return "SPATIAL_DATACHANGE"
+        return "INTERFACEKIT_OUTPUTCHANGE"
     }
     
     override func tableName() -> String
     {
-        return SpatialChange.sqlTableName()
+        return InterfaceKitOutputChange.sqlTableName()
     }
     
     private var _acceleration_x : Double = 0.0
@@ -183,3 +183,5 @@ class SpatialChange : PhidgetLog, CustomDebugStringConvertible
         managedObject.setValue(magneticfield_z, forKey: "magneticfield_z")
     }
 }
+
+

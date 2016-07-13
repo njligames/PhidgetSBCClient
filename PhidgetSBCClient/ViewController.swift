@@ -54,81 +54,90 @@ extension NSDate {
 
 class ViewController: UIViewController
 {
-    var spatialDataChangeItems = [NSManagedObject]()
+    var spatialDataChangeLogs = [SpatialChange]()
+    var accelerometerChangeLogs = [AccelerometerChange]()
+    var interfaceKitInputChangeLogs = [InterfaceKitInputChange]()
+    var interfaceKitOutputChangeLogs = [InterfaceKitOutputChange]()
+    var interfaceKitSensorChangeLogs = [InterfaceKitSensorChange]()
+    var temperatureChangeLogs = [TemperatureChange]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    func loadLogs<T where T:PhidgetLog >(url: String, inout array: [T])
+    {
+        // populate array from database.
+        let managedObjectArray = self.loadArray(T.sqlTableName())
         
-        //curl -H "Content-type: application/json" -X POST http://10.0.1.17:8001/query -d '{"table":"SPATIAL_DATACHANGE", "year_from":"2016", "month_from":"06", "day_from":"28", "hour_from":"13", "minute_from":"52", "second_from":"39", "year_to":"2016", "month_to":"06", "day_to":"28", "hour_to":"13", "minute_to":"52", "second_to":"39"}'
-        let baseBody : [String: AnyObject] = ["table":"SPATIAL_DATACHANGE",
-                                              "year_from":"2016",
-                                              "month_from":"06",
-                                              "day_from":"28",
-                                              "hour_from":"13",
-                                              "minute_from":"52",
-                                              "second_from":"39",
-                                              "year_to":"2016",
-                                              "month_to":"06",
-                                              "day_to":"28",
-                                              "hour_to":"13",
-                                              "minute_to":"52",
-                                              "second_to":"39"]
+        for managedObject in managedObjectArray
+        {
+            array.append(T(managedObject: managedObject))
+        }
         
-        RestApiManager.sharedInstance.baseURL = "http://10.0.1.17:8001/query"
-        RestApiManager.sharedInstance.post(baseBody, onCompletion: { (json:AnyObject) in
-            if let v = json["SPATIAL_DATACHANGE"] as? String {
-                if let logs = v.parseJSONString as? [[String: AnyObject]] {
-                    for log in logs
-                    {
-                        self.saveSpatialChange(SpatialChange(json: log))
-                    }
+        // populate array from server.
+        T.query(url, onCompletion: {(logs: [[String: AnyObject]]) in
+            for log in logs
+            {
+                if let managedObject = self.saveDataLog(T(json: log))
+                {
+                    array.append(T(managedObject: managedObject))
                 }
             }
         })
     }
     
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
         
-        self.loadSpatialDataChangeItems()
+        let url = String("http://10.0.1.17:8001/query")
+        
+//        self.loadLogs(url, array: &self.spatialDataChangeLogs)
+        self.loadLogs(url, array: &self.accelerometerChangeLogs)
+//        self.loadLogs(url, array: &self.interfaceKitInputChangeLogs)
+//        self.loadLogs(url, array: &self.interfaceKitOutputChangeLogs)
+//        self.loadLogs(url, array: &self.interfaceKitSensorChangeLogs)
+//        self.loadLogs(url, array: &self.temperatureChangeLogs)
         
     }
     
-    func loadSpatialDataChangeItems()
-    {
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
-        
-        let fetchRequest = NSFetchRequest(entityName: "SPATIAL_DATACHANGE")
-        
-        do {
-            let results =
-                try managedContext.executeFetchRequest(fetchRequest)
-            self.spatialDataChangeItems = results as! [NSManagedObject]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func hasSpatialChange(data:SpatialChange, managedContext: NSManagedObjectContext) -> Bool
+    func loadArray(tableName: String) -> [NSManagedObject]
     {
-        // Fetching
-        let fetchRequest = NSFetchRequest(entityName: "SPATIAL_DATACHANGE")
+        var managedObjectArray = [NSManagedObject]()
         
-        // Create Predicate
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: tableName)
+        
+        do
+        {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            
+            managedObjectArray = results as! [NSManagedObject]
+            
+        }
+        catch let error as NSError
+        {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        return managedObjectArray
+    }
+    
+    func hasDataLog(data: PhidgetLog, managedContext: NSManagedObjectContext) -> Bool
+    {
+        let fetchRequest = NSFetchRequest(entityName: data.tableName())
+        
         let predicate = NSPredicate(format: "id == %@ AND logtime == %@", data.id, data.logTime)
         fetchRequest.predicate = predicate
         
-        // Add Sort Descriptor
         let sortDescriptor1 = NSSortDescriptor(key: "logtime", ascending: true)
         let sortDescriptor2 = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
@@ -146,52 +155,29 @@ class ViewController: UIViewController
             let fetchError = error as NSError
             print(fetchError)
         }
-        
         return false
     }
     
-    func saveSpatialChange(data: SpatialChange)
+    func saveDataLog(data: PhidgetLog) -> NSManagedObject?
     {
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
-        if !hasSpatialChange(data, managedContext: managedContext)
+        if !hasDataLog(data, managedContext: managedContext)
         {
-            let entity =  NSEntityDescription.entityForName("SPATIAL_DATACHANGE",
+            let entity =  NSEntityDescription.entityForName(data.tableName(),
                                                             inManagedObjectContext:managedContext)
             
             let log = NSManagedObject(entity: entity!,
-                                        insertIntoManagedObjectContext: managedContext)
+                            insertIntoManagedObjectContext: managedContext)
+            data.save(log)
             
-            log.setValue(data.acceleration_x, forKey: "acceleration_x")
-            log.setValue(data.acceleration_y, forKey: "acceleration_y")
-            log.setValue(data.acceleration_z, forKey: "acceleration_z")
-            
-            log.setValue(data.angularrate_x, forKey: "angularrate_x")
-            log.setValue(data.angularrate_y, forKey: "angularrate_y")
-            log.setValue(data.angularrate_z, forKey: "angularrate_z")
-            
-            log.setValue(data.id, forKey: "id")
-            log.setValue(data.index, forKey: "index")
-            log.setValue(data.logTime, forKey: "logtime")
-            
-            log.setValue(data.magneticfield_x, forKey: "magneticfield_x")
-            log.setValue(data.magneticfield_y, forKey: "magneticfield_y")
-            log.setValue(data.magneticfield_z, forKey: "magneticfield_z")
-            
-            do
-            {
-                try managedContext.save()
-                
-                self.spatialDataChangeItems.append(log)
-            }
-            catch let error as NSError
-            {
-                print("Could not save \(error), \(error.userInfo)")
-            }
+            return log
         }
+        
+        return nil
     }
 }
 

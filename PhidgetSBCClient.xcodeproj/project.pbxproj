@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C16E86CE1D30244800C6575A /* SpatialChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E86CD1D30244800C6575A /* SpatialChange.swift */; };
+		C16E87561D35311A00C6575A /* PhidgetLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E87551D35311A00C6575A /* PhidgetLog.swift */; };
+		C16E87581D35657300C6575A /* AccelerometerChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E87571D35657300C6575A /* AccelerometerChange.swift */; };
+		C16E875A1D35665900C6575A /* InterfaceKitInputChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E87591D35665900C6575A /* InterfaceKitInputChange.swift */; };
+		C16E875C1D35666B00C6575A /* InterfaceKitOutputChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E875B1D35666B00C6575A /* InterfaceKitOutputChange.swift */; };
+		C16E875E1D35668200C6575A /* InterfaceKitSensorChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E875D1D35668200C6575A /* InterfaceKitSensorChange.swift */; };
+		C16E87601D35669900C6575A /* TemperatureChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E875F1D35669900C6575A /* TemperatureChange.swift */; };
+		C16E87621D366AE600C6575A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E87611D366AE600C6575A /* Date.swift */; };
 		C1C8ADB81D2FCF56003108A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADB71D2FCF56003108A3 /* AppDelegate.swift */; };
 		C1C8ADBA1D2FCF56003108A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADB91D2FCF56003108A3 /* ViewController.swift */; };
 		C1C8ADBD1D2FCF56003108A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C8ADBB1D2FCF56003108A3 /* Main.storyboard */; };
@@ -42,6 +49,13 @@
 		AF5EA32ADBBBE7316C88D163 /* Pods-PhidgetSBCClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhidgetSBCClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhidgetSBCClient/Pods-PhidgetSBCClient.release.xcconfig"; sourceTree = "<group>"; };
 		BCD857F7EDE9CACF84B3EBD5 /* Pods_PhidgetSBCClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhidgetSBCClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16E86CD1D30244800C6575A /* SpatialChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpatialChange.swift; sourceTree = "<group>"; };
+		C16E87551D35311A00C6575A /* PhidgetLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhidgetLog.swift; sourceTree = "<group>"; };
+		C16E87571D35657300C6575A /* AccelerometerChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerChange.swift; sourceTree = "<group>"; };
+		C16E87591D35665900C6575A /* InterfaceKitInputChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceKitInputChange.swift; sourceTree = "<group>"; };
+		C16E875B1D35666B00C6575A /* InterfaceKitOutputChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceKitOutputChange.swift; sourceTree = "<group>"; };
+		C16E875D1D35668200C6575A /* InterfaceKitSensorChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceKitSensorChange.swift; sourceTree = "<group>"; };
+		C16E875F1D35669900C6575A /* TemperatureChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureChange.swift; sourceTree = "<group>"; };
+		C16E87611D366AE600C6575A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C1C8ADB41D2FCF56003108A3 /* PhidgetSBCClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhidgetSBCClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C8ADB71D2FCF56003108A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1C8ADB91D2FCF56003108A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +149,14 @@
 				C1C8ADC61D2FCF56003108A3 /* Info.plist */,
 				C1C8ADBE1D2FCF56003108A3 /* PhidgetSBCClient.xcdatamodeld */,
 				C1C8ADE81D2FD1AD003108A3 /* RestApiManager.swift */,
+				C16E87551D35311A00C6575A /* PhidgetLog.swift */,
 				C16E86CD1D30244800C6575A /* SpatialChange.swift */,
+				C16E87571D35657300C6575A /* AccelerometerChange.swift */,
+				C16E87591D35665900C6575A /* InterfaceKitInputChange.swift */,
+				C16E875B1D35666B00C6575A /* InterfaceKitOutputChange.swift */,
+				C16E875D1D35668200C6575A /* InterfaceKitSensorChange.swift */,
+				C16E875F1D35669900C6575A /* TemperatureChange.swift */,
+				C16E87611D366AE600C6575A /* Date.swift */,
 			);
 			path = PhidgetSBCClient;
 			sourceTree = "<group>";
@@ -340,11 +361,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C16E87561D35311A00C6575A /* PhidgetLog.swift in Sources */,
+				C16E875C1D35666B00C6575A /* InterfaceKitOutputChange.swift in Sources */,
 				C1C8ADBA1D2FCF56003108A3 /* ViewController.swift in Sources */,
 				C1C8ADB81D2FCF56003108A3 /* AppDelegate.swift in Sources */,
+				C16E875E1D35668200C6575A /* InterfaceKitSensorChange.swift in Sources */,
+				C16E87601D35669900C6575A /* TemperatureChange.swift in Sources */,
 				C16E86CE1D30244800C6575A /* SpatialChange.swift in Sources */,
+				C16E87621D366AE600C6575A /* Date.swift in Sources */,
+				C16E87581D35657300C6575A /* AccelerometerChange.swift in Sources */,
 				C1C8ADE91D2FD1AD003108A3 /* RestApiManager.swift in Sources */,
 				C1C8ADC01D2FCF56003108A3 /* PhidgetSBCClient.xcdatamodeld in Sources */,
+				C16E875A1D35665900C6575A /* InterfaceKitInputChange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
