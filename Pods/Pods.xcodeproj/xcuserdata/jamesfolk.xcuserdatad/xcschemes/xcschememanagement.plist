@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-PhidgetSBCClient.xcscheme</key>
+		<key>CorePlot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>Pods-PhidgetSBCClient.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>939C5A95E2E23282D39547B3F42DF236</key>
+		<key>A59347F22DFF8E25799EFD3D23E80101</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E03B2465CA813772B505FFABD7662D4B</key>
+		<key>DD8D88E11F267207CF0EBFCDF88353B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,21 +1,12 @@
 PODS:
-  - SwiftyJSON (2.3.2)
+  - CorePlot (2.1)
 
 DEPENDENCIES:
-  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
-
-EXTERNAL SOURCES:
-  SwiftyJSON:
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
-
-CHECKOUT OPTIONS:
-  SwiftyJSON:
-    :commit: 73670b94292b8d8496c398a973f56ac67789ba9f
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+  - CorePlot (~> 2.1)
 
 SPEC CHECKSUMS:
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  CorePlot: ab9898c79b94999018e9634ab0aa4c21480c8552
 
-PODFILE CHECKSUM: 57e750ff9c98a753c83ccb8ac08e03d2867bdede
+PODFILE CHECKSUM: 44e0d381b8f9dac04f541765cae5f0408f88d1dc
 
 COCOAPODS: 1.0.1
