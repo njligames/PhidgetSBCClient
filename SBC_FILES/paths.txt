@@ -1,0 +1,2 @@
+/var/www/cgi-bin/phidgets-loggingservice.sh 
+/etc/init.d/phidgetlogging
